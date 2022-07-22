@@ -1,0 +1,170 @@
+Agenda
+
+
+SQL
+
+Database Systems
+
+Database: collection of related information
+
+Structured Database: which has some structure
+ex:flipkart,irctc,banking,telecom
+irctc:
+Train nO,TRANINNAME,source,destin,dpe,arvial,inbertween,price,seats
+1001
+
+
+Unstructured Database:which has no structure
+Webpages:
+audio,video,images,hyperlink,text,animated
+
+Dbms: a software to manage the structured database.
+Ex:
+Oracle,Mysql,postgres,SqlSERVER,dafoodile---->SQL
+
+
+SQL:is a langiage used to work with DBMS----> Structured Database
+
+Data Types
+Character Data Types: char--2000 not a variable length ,varchar,varchar2(4000 chars) is a vraibale length,(4000)
+
+
+nvarchar,nvarchar2:----> NLS---->National Language Specfiction---(Encoded Data)
+
+
+Numeric Data Types:number,number(size),number(precison,scale),float, integer,int(physical na in oracle)
+Advanced Datatypes:clob,blob,long,raw  0-9&a-f  37256
+
+ex long(12345)---->'12345';
+
+Date&Time: date(dd-mm-yy hr:min:sec),timestamp(dd-mm-yy hr:min:sec:fscec)
+ex: char(20)---->10 charcters-----
+
+
+Constraints:
+Primary Key: no duplicate & null allowed---->Unique+Not null
+Unique:no duplicate
+Not Null:null value is not allowed
+Check:set some range---> ex age----->Voterdid----> check(age >=18 and age<=100)
+Foriegn Key: used to esatblish relationsjip between parent and child table   (Referntial integrity constraints)
+deafult
+Operators:
+Arithmetic Operators:+,-,*,/,%
+Relational Operators:=,<,<=,>,>= ,!=, <>
+LIKE,AND,BETWEEN,NOT,OR
+
+set,union,uniaonall,intersect minus
+
+SQL Commands:
+DDL:used to work with the structure
+create,alter,drop------(table,view,index,procedure)
+
+DML: used to work with data
+insert,update,delete,truncate,select
+
+DCL:to add and remove permisions
+grant,revoke
+
+
+TCL: to manage the transactions
+
+commit;
+rollback:
+savepoint: undo a particluar transaction
+
+
+Clauses
+where
+orderby
+groupby
+having
+
+rollup
+cube
+
+
+*********************************************************************************************
+Functions in Oracle
+1.Predifined  
+Numeric Functions: abs(),ceil(),floor(),mod(),power(),round(),trunc()
+String Functions:length(),lower(),upper(),initcap(),ltrim(),rtrim(),concat(),substr()------> Single row functions
+Date Functions: sysdate,add_months(),last_day(),next_day(),months_between(),current_date()
+Conversion Functions:to_char(),to_date()
+Aggregate Functions: sum(),max(),min(),avg(),count()-------Mulitrow functions
+
+
+
+2.UserDefined(PL/SQL)
+
+
+Subquery:
+A query within another query is called subquery.
+
+emp
+eid ---pk ename
+101     abc
+102    xyz
+103   klm
+
+
+
+dept
+deptno,deptname,eid--fk
+901        it            102
+903        hr            101
+
+find the detail of all employees who are working in some department
+
+
+Nested Subquery:
+
+outerquery(innerquery);
+Bottom-up-Approach: inner query will execute first and then outer query
+select * from emp where eid in(select eid from dept);
+
+
+
+Co-related Subquery:
+outerquery(innerquery);
+Top-down-Approach:outer query will execute first and then inner query
+if the attribute of outerquery is used in the inner query
+ select * from emp where eid exists(select eid from dept where emp.eid=dept.eid);
+
+
+
+Inline View Subquery:
+1. Subquery is not allowed to use order by clause: we use inline view
+2. column alias are not allowed in where clause condition: we use inline view
+
+
+Syntax:
+select * from tablename--->sql select query
+select * from(select query)----> inline view query 
+
+
+
+Joins:
+Common,left-side,right-side,or both side with/without coomon
+
+CrossProduct+ some condition
+CrossProduct= MrowsA* NrowsB + some conditon;
+
+
+select * from emp,dept where emp.eid=dept.eid;
+
+
+
+
+
+Team A
+
+functionality()----->store this functionality using procdures
+
+Team b
+access to this a
+
+PL/SQL
+
+
+
+
